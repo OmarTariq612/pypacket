@@ -10,7 +10,7 @@ IPV4_MORE_FRAGMENTS = 1 << 0
 
 
 class Layer(metaclass=abc.ABCMeta):
-    @abc.abstractclassmethod
+    @abc.abstractmethod
     def set_length(self, payload_length: int) -> None:
         """\
         set the total length of the layer by specifing the payload length
@@ -24,14 +24,14 @@ class Layer(metaclass=abc.ABCMeta):
         """
         raise NotImplementedError
 
-    @abc.abstractclassmethod
+    @abc.abstractmethod
     def get_payload_length(self) -> int:
         """\
         get the length of the payload
         """
         raise NotImplementedError
 
-    @abc.abstractclassmethod
+    @abc.abstractmethod
     def has_checksum(self) -> bool:
         """\
         returns if the layer has a checksum that need to be calculated or not
